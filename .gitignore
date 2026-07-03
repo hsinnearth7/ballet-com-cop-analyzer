@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+# tool caches and build artefacts (regenerated locally, never commit)
+.mypy_cache/
+.hypothesis/
+.coverage
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+# large data + media (download locally, do not commit)
+*.c3d
+*.mat
+*.mp4
+*.mov
+data/sample_synthetic.csv
+docs/example_output.png

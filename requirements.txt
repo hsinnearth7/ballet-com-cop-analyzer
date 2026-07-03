@@ -1,0 +1,11 @@
+# Core (deterministic IA/RCIA pipeline + tests run with just these):
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+pytest>=7.0
+# Video processing (notebook 01 Section B; install only when you process a clip):
+# mediapipe>=0.10
+# opencv-python>=4.8
+# Force-plate dataset loading (notebook 02):
+# ezc3d>=1.5
