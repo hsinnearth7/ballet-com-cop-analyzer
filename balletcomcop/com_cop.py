@@ -6,8 +6,10 @@ Lu's IA/RCIA needs the COP, normally from a force plate. But Lin, Su & Lin (2019
 (Front Bioeng Biotechnol 7:290), who applied the *same* COM-COP inclination method to
 pirouette, approximate the COP during single-leg phases as the midpoint between the
 ankle-joint centre and the metatarsal marker (i.e. a kinematics-only proxy). This module
-reuses exactly that approximation so a markerless video pipeline can estimate IA/RCIA
-during single-leg ballet tasks (releve, passe, pirouette) without a force plate.
+reuses that idea, approximated with the available pose keypoints (the ankle and the foot-index toe
+keypoint in place of the ankle joint centre and metatarsal marker; see docs/LIMITATIONS.md), so a
+markerless video pipeline can estimate IA/RCIA during single-leg ballet tasks (releve, passe,
+pirouette) without a force plate.
 
 Limitations are documented in docs/LIMITATIONS.md: the proxy is only valid while the foot
 is the sole support; it ignores true pressure distribution; it is 2D/3D-pose-dependent.
@@ -16,7 +18,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from .anthropometry import compute_com, derive_midpoints
+from .anthropometry import compute_com
 
 
 def cop_proxy_single_leg(kp: dict[str, np.ndarray], support: str) -> np.ndarray:
@@ -65,8 +67,8 @@ def com_and_cop(kp: dict[str, np.ndarray], sex: str = "female",
     support : "left"/"right" to force a single-leg proxy; "double" for a double-leg proxy;
               None -> auto-detect the lower foot as support (single-leg).
     """
-    if not all(k in kp for k in ("mid_shoulder", "mid_hip", "mid_ear")):
-        kp = derive_midpoints(kp)
+    # compute_com derives any missing midpoints itself, with a descriptive
+    # ValueError when source keypoints are absent (occluded frames)
     com = compute_com(kp, sex=sex)
     if support == "double":
         cop = cop_proxy_double_leg(kp)

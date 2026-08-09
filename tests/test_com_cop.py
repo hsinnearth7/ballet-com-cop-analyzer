@@ -48,3 +48,11 @@ def test_com_and_cop_double_leg_support(sym_pose):
     com, cop = com_and_cop(sym_pose, sex="female", support="double")
     expected = 0.5 * (cop_proxy_single_leg(sym_pose, "left") + cop_proxy_single_leg(sym_pose, "right"))
     assert np.allclose(cop, expected)
+
+
+def test_com_and_cop_missing_keypoint_raises_value_error(sym_pose):
+    # an occluded upper-body landmark must give compute_com's descriptive
+    # ValueError, not a raw KeyError from midpoint derivation
+    kp = {k: v for k, v in sym_pose.items() if k != "right_shoulder"}
+    with pytest.raises(ValueError, match="right_shoulder"):
+        com_and_cop(kp, sex="female", support="left")
