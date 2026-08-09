@@ -18,3 +18,5 @@ dist/
 *.mov
 data/sample_synthetic.csv
 docs/example_output.png
+# assistant/editor local state
+.claude/
