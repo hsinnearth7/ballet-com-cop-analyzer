@@ -16,7 +16,7 @@ dependencies = ["numpy>=1.24", "scipy>=1.10", "pandas>=2.0", "matplotlib>=3.7"]
 [project.optional-dependencies]
 video = ["mediapipe>=0.10", "opencv-python>=4.8"]
 forceplate = ["ezc3d>=1.5"]
-dev = ["pytest>=7.0", "ruff", "black", "mypy"]
+dev = ["pytest>=7.0", "pytest-cov", "hypothesis>=6.0", "ruff", "black", "mypy", "bandit"]
 
 [tool.setuptools]
 packages = ["balletcomcop"]
