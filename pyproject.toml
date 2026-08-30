@@ -9,8 +9,7 @@ description = "Kinematics-only COM-COP inclination angle (IA/RCIA) from pose, ap
 requires-python = ">=3.10"
 readme = "README.md"
 license = {file = "LICENSE"}
-# authors: fill in your real name before publishing to GitHub, e.g.
-# authors = [{name = "YOUR NAME", email = "hsinn.earth7@gmail.com"}]
+authors = [{name = "Yu-Hsin Chang", email = "hsinn.earth7@gmail.com"}]
 dependencies = ["numpy>=1.24", "scipy>=1.10", "pandas>=2.0", "matplotlib>=3.7"]
 
 [project.optional-dependencies]

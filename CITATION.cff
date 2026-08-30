@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "balletcomcop: a kinematics-only, force-plate-free implementation of the COM-to-COP inclination-angle balance metric"
+abstract: >-
+  balletcomcop computes the centre-of-mass to centre-of-pressure inclination angle (IA) and its
+  rate of change (RCIA) from kinematics alone, reproducing the Lu-lab balance metric and reusing the
+  force-plate-free single-leg COP proxy of Lin et al. (2019). It ships a force-plate validation of the
+  proxy and a candid, quantified limitations document.
+type: software
+authors:
+  - given-names: "Yu-Hsin"
+    family-names: "Chang"
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/hsinnearth7/ballet-com-cop-analyzer"
+date-released: "2026-08-30"
+keywords:
+  - biomechanics
+  - balance
+  - centre of pressure
+  - inclination angle
+  - markerless
+  - motion capture
+references:
+  - type: article
+    authors:
+      - family-names: Lin
+        given-names: Chun-Wei
+      - family-names: Su
+        given-names: Fong-Chin
+      - family-names: Lin
+        given-names: Cheng-Feng
+    title: "Kinematic analysis of postural stability during ballet turns (pirouettes) in experienced and novice dancers"
+    journal: "Frontiers in Bioengineering and Biotechnology"
+    volume: 7
+    start: 290
+    year: 2019
+    doi: "10.3389/fbioe.2019.00290"
