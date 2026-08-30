@@ -36,7 +36,7 @@ def analyze_frames(kp_by_frame: dict[int, dict[str, np.ndarray]], fps: float,
     return df
 
 
-def _safe_rcia(ia: "pd.Series", time: "pd.Series") -> np.ndarray:
+def _safe_rcia(ia: pd.Series, time: pd.Series) -> np.ndarray:
     """RCIA that tolerates NaN frames (e.g. a dropped/occluded pose): fit on the finite
     samples, leave NaN where IA was NaN. Returns NaN everywhere if < 4 finite samples."""
     ia = ia.to_numpy(dtype=float)

@@ -8,9 +8,9 @@ from balletcomcop.pose_to_keypoints import frame_to_kp_dict
 
 def _moving_pose(base, ap_shift):
     kp = {k: v.copy() for k, v in base.items()}
-    for k in kp:
+    for k, value in kp.items():
         if k not in ("right_ankle", "right_foot_index"):  # plant the support foot
-            kp[k] = kp[k] + np.array([ap_shift, 0.0, 0.0])
+            kp[k] = value + np.array([ap_shift, 0.0, 0.0])
     return kp
 
 

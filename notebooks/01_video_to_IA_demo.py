@@ -25,10 +25,11 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 import pandas as pd
-from balletcomcop.pose_to_keypoints import frame_to_kp_dict, keypoints_from_video
-from balletcomcop.pipeline import analyze_frames
-from balletcomcop.plotting import plot_ia_rcia, plot_com_cop_path
+
 from balletcomcop.inclination import decompose_ap_ml
+from balletcomcop.pipeline import analyze_frames
+from balletcomcop.plotting import plot_com_cop_path, plot_ia_rcia
+from balletcomcop.pose_to_keypoints import frame_to_kp_dict, keypoints_from_video
 
 # %% [markdown]
 # ## Section A: synthetic single-leg-balance demo (no video needed)

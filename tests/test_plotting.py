@@ -1,4 +1,5 @@
 import os
+
 os.environ.setdefault("MPLBACKEND", "Agg")  # headless-safe for CI
 
 import numpy as np

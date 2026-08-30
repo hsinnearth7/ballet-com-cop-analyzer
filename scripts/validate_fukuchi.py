@@ -65,7 +65,7 @@ def analyze_trial(mkr: pd.DataFrame, grf: pd.DataFrame) -> list[tuple]:
     keys, com, ct, cp, mm = [], [], [], [], []
     for i in range(nm):
         FUNNEL["frames"] += 1
-        j = int(round(i * (ng - 1) / (nm - 1)))
+        j = round(i * (ng - 1) / (nm - 1))
         loaded = [p for p in range(5) if fv[p][j] > FV_THRESH]
         if len(loaded) != 1:
             continue

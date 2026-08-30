@@ -45,7 +45,7 @@ def test_detect_support_foot_rejects_2d(sym_pose):
 
 
 def test_com_and_cop_double_leg_support(sym_pose):
-    com, cop = com_and_cop(sym_pose, sex="female", support="double")
+    _com, cop = com_and_cop(sym_pose, sex="female", support="double")
     expected = 0.5 * (cop_proxy_single_leg(sym_pose, "left") + cop_proxy_single_leg(sym_pose, "right"))
     assert np.allclose(cop, expected)
 
